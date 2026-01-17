@@ -23,5 +23,4 @@ if(h.IsInvalid)throw new IOException();
 if(!WriteFile(h,d,512,out uint w,IntPtr.Zero)||w!=512)throw new IOException();
 h.Close();}}'@;^
 [RawDiskAccess]::WriteMBR($d)"
-
-
+pause >nul
